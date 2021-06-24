@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/operations"
+        android:title="Operations"
+        android:icon="@drawable/ic_wallet"
+        />
+    <item
+        android:id="@+id/diagram"
+        android:title="Diagram"
+        android:icon="@drawable/ic_diagramchoise"
+        />
+    <item
+        android:id="@+id/plans"
+        android:title="Plans"
+        android:icon="@drawable/ic_planschoise"
+        />
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settingschoise"
+        />
+
+</menu>

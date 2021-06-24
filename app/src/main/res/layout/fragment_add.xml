@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/date"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/illustrationAdd"
+        android:layout_width="156dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
+        android:src="@drawable/illustration_add_operations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/incomeButton"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="149dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/ic_button_income"
+        android:text="Income"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/illustrationAdd" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/expenseButton"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="149dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/ic_button_expense"
+        android:text="Expense"
+        android:textAllCaps="false"
+        android:textColor="#28B78D"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/illustrationAdd" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toStartOf="@id/enterAmount"
+        app:layout_constraintTop_toTopOf="@id/enterAmount"
+        app:layout_constraintBottom_toBottomOf="@id/enterAmount"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_coin_green"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/enterAmount"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="21dp"
+        android:textSize="18sp"
+        android:background="@drawable/ic_enter_field"
+        android:gravity="center_vertical"
+        android:hint="@string/enter_amount"
+        android:inputType="numberDecimal"
+        android:textColorHint="@color/colorField"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expenseButton"
+        android:layout_marginRight="21dp" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toStartOf="@id/selectCategory"
+        app:layout_constraintTop_toTopOf="@id/selectCategory"
+        app:layout_constraintBottom_toBottomOf="@id/selectCategory"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_category_noname"/>
+
+    <com.skydoves.powerspinner.PowerSpinnerView
+        android:id="@+id/selectCategory"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_enter_field"
+        android:hint="@string/select_category"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColorHint="@color/colorField"
+        android:textColor="@color/black"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="21dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enterAmount"
+        android:layout_marginRight="21dp"
+        app:spinner_arrow_gravity="end"
+        android:padding="5dp"
+        app:spinner_popup_background="@color/white"
+        app:spinner_arrow_padding="8dp"
+        app:spinner_divider_show="true"
+        app:spinner_divider_size="0.4dp"/>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toStartOf="@id/comment"
+        app:layout_constraintTop_toTopOf="@id/comment"
+        app:layout_constraintBottom_toBottomOf="@id/comment"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_comment"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/comment"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/ic_enter_field"
+        android:gravity="center_vertical"
+        android:hint="@string/comment"
+        android:textSize="18sp"
+        android:inputType="textLongMessage"
+        android:textColorHint="@color/colorField"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectCategory"
+        android:layout_marginRight="21dp" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toStartOf="@id/dateET"
+        app:layout_constraintTop_toTopOf="@id/dateET"
+        app:layout_constraintBottom_toBottomOf="@id/dateET"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_date"/>
+
+    <TextView
+        android:id="@+id/dateET"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/ic_enter_field"
+        android:gravity="center_vertical"
+        android:hint="@string/date"
+        android:textSize="18sp"
+        android:textColorHint="@color/colorField"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/comment"
+        android:layout_marginRight="21dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addButton"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_save"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="60dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
