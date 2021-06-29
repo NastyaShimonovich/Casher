@@ -7,6 +7,7 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import nastya.shymanovich.casher.domain.db.entity.CashEntity
+import nastya.shymanovich.casher.domain.db.entity.CashOperation
 import nastya.shymanovich.casher.domain.repository.CashRepository
 import nastya.shymanovich.casher.domain.utils.Date
 import javax.inject.Inject
@@ -62,15 +63,19 @@ class AddInformationVM @Inject constructor(
         )
     }
 
-    private fun getCash(): CashEntity {
-        return CashEntity(
-            sum = amount,
-            category = category,
-            currency = comment,
-            comment = comment,
-            date = date.toString(),
-            income = income,
-            timestamp = getTimeStamp()
+    private fun getCash(): CashOperation {
+        return CashOperation(
+            dateNumber = date.dayOfMonth,
+            dayOfWeek = date.dayOfMonth.toString(),
+            month = date.monthOfYear.toString(),
+            list = CashEntity(
+                category = category,
+                currency = amount.toString(),
+                comment = comment,
+                date = date.toString(),
+                income = income,
+                timestamp = getTimeStamp()
+            )
         )
     }
 

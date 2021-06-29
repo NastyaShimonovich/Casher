@@ -7,17 +7,18 @@ import androidx.room.Query
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Observable
 import nastya.shymanovich.casher.domain.db.entity.CashEntity
+import nastya.shymanovich.casher.domain.db.entity.CashOperation
 
 @Dao
 interface CashDao {
 
     @Insert
-    fun insertCash(cashEntity: CashEntity): Completable
+    fun insertCash(cashEntity: CashOperation): Completable
 
-    @Query("SELECT*FROM cashTable")
-    fun getCash(): Observable<List<CashEntity>>
+    @Query("SELECT*FROM cashOperation")
+    fun getCash(): Observable<List<CashOperation>>
 
     @Delete
-    fun deleteCash(cashEntity: CashEntity): Completable
+    fun deleteCash(cashEntity: CashOperation): Completable
 
 }

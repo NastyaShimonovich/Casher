@@ -6,21 +6,23 @@ import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import nastya.shymanovich.casher.domain.db.dao.CashDao
 import nastya.shymanovich.casher.domain.db.entity.CashEntity
+import nastya.shymanovich.casher.domain.db.entity.CashOperation
 
 class CashRepositoryImp (private val cashDao: CashDao) : CashRepository {
-    override fun insertCash(cashEntity: CashEntity): Completable {
+    override fun insertCash(cashEntity: CashOperation
+    ): Completable {
         return cashDao.insertCash(cashEntity)
             .subscribeOn(Schedulers.io())
     }
 
-    override fun observeCash(): Flowable<List<CashEntity>> {
+    override fun observeCash(): Flowable<List<CashOperation>> {
         return cashDao
             .getCash()
             .toFlowable(BackpressureStrategy.BUFFER)
             .subscribeOn(Schedulers.io())
     }
 
-    override fun deleteCash(cashEntity: CashEntity): Completable {
+    override fun deleteCash(cashEntity: CashOperation): Completable {
         return cashDao
             .deleteCash(cashEntity)
             .subscribeOn(Schedulers.io())
